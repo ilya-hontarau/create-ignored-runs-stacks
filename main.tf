@@ -9,9 +9,12 @@ terraform {
 }
 
 resource "spacelift_stack" "test" {
+count = 100
   autodeploy        = true
   branch            = "main"
-  name              = "ignored-runs-1"
+  name              = "ignored-runs-${count.index}"
+project_root      = "cluster"
   repository        = "test-spacelify"
-  terraform_version = "1.3.0"
+  terraform_version = "1.5.7"
 }
+
