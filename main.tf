@@ -1,5 +1,13 @@
 provider "spacelift" {}
 
+terraform {
+  required_providers {
+    spacelift = {
+      source = "spacelift.io/spacelift-io/spacelift"
+    }
+  }
+}
+
 resource "spacelift_stack" "test" {
   autodeploy        = true
   branch            = "main"
