@@ -9,7 +9,7 @@ terraform {
 }
 
 resource "spacelift_stack" "test" {
-count = 100
+count = 101
   autodeploy        = true
   branch            = "main"
   name              = "ignored-runs-${count.index}"
